@@ -28,13 +28,13 @@ public class MainSpring {
             totems.add(a);
         }
         long time1 = System.currentTimeMillis();
-        for (int i = 0; i < 19950000; i++) {
+        for (int i = 0; i < 20000000; i++) {
             int n = (int)Math.floor(Math.random() * names.size());
             int m = (int)Math.floor(Math.random() * totems.size());
             int c = (int)Math.floor(Math.random() * 30);
             Person person = new Person (names.get(n), totems.get(m), c);
             personJdbc.insert(person);
-            personJdbc.insertFromArrays(names, totems);
+            //personJdbc.insertFromArrays(names, totems);
         }
         long time2 = System.currentTimeMillis();
         System.out.println(time2 - time1);
